@@ -3,7 +3,7 @@
 source /host/settings.sh
 
 ### make sure that we have the right git branch on the make file
-makefile="$CODE_DIR/build-qtr_client.make"
+makefile="$CODE_DIR/build-qtrclient.make"
 git_branch=$(git -C $CODE_DIR branch | cut -d' ' -f2)
 sed -i $makefile \
     -e "/qtr_client..download..branch/ c projects[qtr_client][download][branch] = $git_branch"
@@ -38,6 +38,9 @@ cp libraries/bootstrap/less/variables.less themes/qtr_client/less/
 cd $DRUPAL_DIR/profiles/qtr_client/libraries/
 cp hybridauth-drupaloauth2/DrupalOAuth2.php \
    hybridauth/hybridauth/Hybrid/Providers/
+
+### copy the logo file to the drupal dir
+ln -s $DRUPAL_DIR/profiles/qtr_client/qtr_client.png $DRUPAL_DIR/logo.png
 
 ### get a clone of qtrclient from github
 if [[ -n $DEV ]]; then

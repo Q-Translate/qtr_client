@@ -92,16 +92,4 @@ sed -i /etc/php/7.0/apache2/php.ini \
     -e '/^;\?upload_max_filesize/ c upload_max_filesize = 16M' \
     -e '/^;\?default_socket_timeout/ c default_socket_timeout = 90'
 
-### config phpmyadmin
-if [[ -n $DEV ]]; then
-    sed -i /etc/phpmyadmin/config.inc.php \
-        -e "/Don't expire login quickly/,$ d"
-    cat <<EOF >> /etc/phpmyadmin/config.inc.php
-// Don't expire login quickly
-\$sessionDuration = 60*60*24*7; // 60*60*24*7 = one week
-ini_set('session.gc_maxlifetime', \$sessionDuration);
-\$cfg['LoginCookieValidity'] = \$sessionDuration;
-EOF
-fi
-
 service apache2 restart
