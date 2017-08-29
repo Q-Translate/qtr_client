@@ -1,0 +1,6 @@
+variable:qtrClient_topusers_period
+variable:qtrClient_topusers_size
+variable:qtrClient_translation_lng
+fe_block_settings:qtrClient-latest
+fe_block_settings:qtrClient-stats
+fe_block_settings:qtrClient-topusers
