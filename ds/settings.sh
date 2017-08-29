@@ -19,5 +19,14 @@ GMAIL_PASSWD=
 ### Admin settings.
 ADMIN_PASS=123456
 
+### Translation language of Q-Translate Client.
+### Can be: 'fr', 'de', 'sq' etc. or can be 'all'
+TRANSLATION_LNG='all'
+
+### Settings for OAuth2 Login.
+OAUTH2_SERVER_URL='https://dev.qtranslate.org'
+OAUTH2_CLIENT_ID='client1'
+OAUTH2_CLIENT_SECRET='0123456789'
+
 ### Uncomment if this installation is for development.
-#DEV=true
+DEV=true

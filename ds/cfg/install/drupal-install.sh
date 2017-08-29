@@ -10,7 +10,7 @@ site_name="Q-Translate"
 site_mail="$GMAIL_ADDRESS"
 account_name=admin
 account_pass="$ADMIN_PASS"
-account_mail="$ADMIN_EMAIL"
+account_mail="$GMAIL_ADDRESS"
 
 ### create the database and user
 mysql='mysql --defaults-file=/etc/mysql/debian.cnf'
@@ -21,7 +21,7 @@ $mysql -e "
 "
 
 ### start site installation
-#sed -e '/memory_limit/ c memory_limit = -1' -i /etc/php/7.0/cli/php.ini
+sed -e '/memory_limit/ c memory_limit = -1' -i /etc/php/7.0/cli/php.ini
 cd $DRUPAL_DIR
 drush site-install --verbose --yes qtr_client \
       --db-url="mysql://$db_user:$db_pass@localhost/$db_name" \
@@ -30,13 +30,23 @@ drush site-install --verbose --yes qtr_client \
 
 ### install additional features
 drush="drush --root=$DRUPAL_DIR --yes"
+
+$drush pm-enable qcl_qtrClient
+$drush features-revert qcl_qtrClient
+
+$drush pm-enable qcl_misc
+$drush features-revert qcl_misc
+
 $drush pm-enable qcl_layout
 $drush features-revert qcl_layout
 
 $drush pm-enable qcl_content
 
-$drush pm-enable qcl_captcha
-$drush features-revert qcl_captcha
+#$drush pm-enable qcl_captcha
+#$drush features-revert qcl_captcha
+
+$drush pm-enable qcl_permissions
+$drush features-revert qcl_permissions
 
 #$drush pm-enable qcl_invite
 #$drush pm-enable qcl_simplenews

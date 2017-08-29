@@ -34,6 +34,19 @@ cp -a libraries/bootstrap themes/contrib/bootstrap/
 cp -a libraries/bootstrap themes/qtr_client/
 cp libraries/bootstrap/less/variables.less themes/qtr_client/less/
 
+### copy hybriauth provider DrupalOAuth2.php to the right place
+cd $DRUPAL_DIR/profiles/qtr_client/libraries/
+cp hybridauth-drupaloauth2/DrupalOAuth2.php \
+   hybridauth/hybridauth/Hybrid/Providers/
+
+### get a clone of qtrclient from github
+if [[ -n $DEV ]]; then
+    cd $DRUPAL_DIR/profiles/qtr_client/modules/contrib/qtrclient
+    git clone https://github.com/Q-Translate/qtrclient.git
+    cp -a qtrclient/.git .
+    rm -rf qtrclient/
+fi
+
 ### set propper directory permissions
 mkdir -p $DRUPAL_DIR/sites/all/translations
 chown -R www-data: $DRUPAL_DIR/sites/all/translations

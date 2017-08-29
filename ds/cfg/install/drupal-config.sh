@@ -40,3 +40,14 @@ cat <<EOF > /etc/cron.d/drupal7
 
 0 * * * *    www-data    [ -x /usr/bin/drush ] && /usr/bin/drush @qcl cron > /dev/null 2>&1
 EOF
+
+### prevent robots from crawling translations
+sed -i $DRUPAL_DIR/robots.txt \
+    -e '/# Q-Translate/,$ d'
+cat <<EOF >> $drupal_dir/robots.txt
+# Q-Translate
+Disallow: /qtr/
+Disallow: /?q=qtr/
+Disallow: /translations/
+Disallow: /?q=translations/
+EOF
