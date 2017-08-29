@@ -118,4 +118,4 @@ libraries[tinymce][download][url] = https://github.com/tinymce/tinymce/archive/4
 
 projects[menu_target] = 1.6
 projects[menu_import] = 1.7
-rojects[advuser] = 3.x-dev
+projects[advuser] = 3.x-dev
