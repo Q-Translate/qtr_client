@@ -53,7 +53,7 @@ projects[subpathauto] = 1.3
 
 ;;; User interface
 projects[context] = 3.7
-projects[views] = 3.17
+projects[views] = 3.18
 projects[homebox] = 2.0-rc1
 projects[boxes] = 1.2
 projects[edit_profile] = 1.0-beta2
@@ -64,6 +64,7 @@ projects[captcha] = 1.4
 projects[recaptcha] = 2.2
 projects[honeypot] = 1.22
 projects[user_restrictions] = 1.0
+projects[user_restrictions][patch][2856139] = https://www.drupal.org/files/issues/variable_passed_by_reference-2856139-1.patch
 
 ;;; Features
 projects[features] = 2.10
