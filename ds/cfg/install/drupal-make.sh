@@ -51,8 +51,9 @@ if [[ -n $DEV ]]; then
 fi
 
 ### set propper directory permissions
-mkdir -p $DRUPAL_DIR/sites/all/translations
-chown -R www-data: $DRUPAL_DIR/sites/all/translations
+cd $DRUPAL_DIR
+mkdir -p sites/all/translations
+chown -R www-data: sites/all/translations
 mkdir -p sites/default/files/
 chown -R www-data: sites/default/files/
 mkdir -p cache/
