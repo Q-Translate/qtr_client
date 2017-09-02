@@ -44,7 +44,7 @@ EOF
 ### prevent robots from crawling translations
 sed -i $DRUPAL_DIR/robots.txt \
     -e '/# Q-Translate/,$ d'
-cat <<EOF >> $drupal_dir/robots.txt
+cat <<EOF >> $DRUPAL_DIR/robots.txt
 # Q-Translate
 Disallow: /qtr/
 Disallow: /?q=qtr/
