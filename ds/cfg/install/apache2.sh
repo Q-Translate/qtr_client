@@ -27,6 +27,8 @@ cat <<EOF > /etc/apache2/sites-available/qcl.conf
         </FilesMatch>
 </VirtualHost>
 EOF
+### we need to refer to this apache2 config by the name "$DOMAIN.conf" as well
+ln /etc/apache2/sites-available/{qcl,$DOMAIN}.conf
 
 cat <<EOF > /etc/apache2/conf-available/downloads.conf
 Alias /downloads /var/www/downloads
