@@ -58,15 +58,15 @@ people. http://info.qtranslate.org
 
     ds setup-oauth2-login @<qtr-server>
 
-    ds runcfg set-oauth2-login [<@alias> <server-url> <client-key> <client-secret>]
-    ds runcfg set-emailsmtp <gmail-user> <gmail-passwd>
-    ds runcfg set-adminpass <new-drupal-admin-passwd>
-    ds runcfg set-domain <new.domain>
-    ds runcfg set-translation-lng
+    ds inject set-oauth2-login.sh [<@alias> <server-url> <client-key> <client-secret>]
+    ds inject set-emailsmtp.sh <gmail-user> <gmail-passwd>
+    ds inject set-adminpass.sh <new-drupal-admin-passwd>
+    ds inject set-domain.sh <new.domain>
+    ds inject set-translation-lng.sh
 
-    ds runcfg dev/clone proj proj_test
-    ds runcfg dev/clone_rm proj_test
-    ds runcfg dev/clone proj proj1
+    ds inject dev/clone.sh proj proj_test
+    ds inject dev/clone_rm.sh proj_test
+    ds inject dev/clone.sh proj proj1
 
     ds backup [proj1]
     ds restore <backup-file.tgz> [proj1]

@@ -7,29 +7,29 @@ _EOF
 }
 
 cmd_config() {
-    ds runcfg ssmtp
-    ds runcfg mysql
-    ds runcfg install/drupal-make
-    ds runcfg install/drupal-install
-    ds runcfg install/drupal-config
-    ds runcfg install/drush-config
-    ds runcfg install/apache2
-    ds runcfg install/set-prompt
-    ds runcfg install/misc-config
+    ds inject ssmtp.sh
+    ds inject mysql.sh
+    ds inject install/drupal-make.sh
+    ds inject install/drupal-install.sh
+    ds inject install/drupal-config.sh
+    ds inject install/drush-config.sh
+    ds inject install/apache2.sh
+    ds inject install/set-prompt.sh
+    ds inject install/misc-config.sh
 
-    ds runcfg set-emailsmtp
-    #ds runcfg set-domain $DOMAIN
-    #ds runcfg set-adminpass "$ADMIN_PASS"
+    ds inject set-emailsmtp.sh
+    #ds inject set-domain.sh $DOMAIN
+    #ds inject set-adminpass.sh "$ADMIN_PASS"
 
     if [[ -n $DEV ]]; then
-        ds runcfg phpmyadmin
-        ds runcfg dev/make-dev-clone
-        ds runcfg dev/config @qcl_dev
+        ds inject phpmyadmin.sh
+        ds inject dev/make-dev-clone.sh
+        ds inject dev/config.sh @qcl_dev
     fi
 
-    ds runcfg set-oauth2-login
-    ds runcfg set-translation-lng
+    ds inject set-oauth2-login.sh
+    ds inject set-translation-lng.sh
 
     # drush may create some files with wrong permissions, fix them
-    ds runcfg fix-file-permissions
+    ds inject fix-file-permissions.sh
 }

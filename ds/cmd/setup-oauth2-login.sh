@@ -20,11 +20,11 @@ cmd_setup-oauth2-login() {
     local client_secret=$(mcookie)
 
     # register an oauth2 client on qtr_server
-    ds $qtr_server runcfg oauth2-client-add @qtr $client_key $client_secret $redirect_uri
+    ds $qtr_server inject oauth2-client-add.sh @qtr $client_key $client_secret $redirect_uri
     # set the variable qtr_client of the server
     ds $qtr_server exec drush --yes @qtr vset qtr_client $client_url
     # setup oauth2 login on qtr_client
-    ds runcfg set-oauth2-login @qcl $server_url $client_key $client_secret
+    ds inject set-oauth2-login.sh @qcl $server_url $client_key $client_secret
 
     # fix cache
     ds exec drush @qcl cc all
@@ -41,11 +41,11 @@ cmd_setup-oauth2-login() {
         client_secret=$(mcookie)
 
         # register an oauth2 client on qtr_server
-        ds $qtr_server runcfg oauth2-client-add @qtr_dev $client_key $client_secret $redirect_uri
+        ds $qtr_server inject oauth2-client-add.sh @qtr_dev $client_key $client_secret $redirect_uri
         # set the variable qtr_client of the server
         ds $qtr_server exec drush --yes @qtr_dev vset qtr_client $client_url
         # setup oauth2 login on qtr_client
-        ds runcfg set-oauth2-login @qcl_dev $server_url $client_key $client_secret
+        ds inject set-oauth2-login.sh @qcl_dev $server_url $client_key $client_secret
 
         # fix cache
         ds exec drush @qcl_dev cc all
