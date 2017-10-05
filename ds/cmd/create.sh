@@ -21,4 +21,7 @@ cmd_create() {
 
     rm -f qtr_client
     ln -s var-www/qcl/profiles/qtr_client .
+
+    # create the database
+    ds mariadb create
 }

@@ -18,7 +18,7 @@ EOF
 echo $DOMAIN > /etc/hostname
 
 cat <<EOF > /root/.bash_aliases
-alias mysql='mysql --defaults-file=/etc/mysql/debian.cnf'
+alias mysql='mysql --host=$DBHOST --port=$DBPORT --user=$DBUSER --password=$DBPASS --database=$DBNAME'
 #alias git='hub'
 alias g='git status -sb'
 alias gh='git hist'

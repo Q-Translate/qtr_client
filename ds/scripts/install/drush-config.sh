@@ -18,7 +18,7 @@ cat <<EOF > /etc/drush/local_qcl.aliases.drushrc.php
 
 \$aliases['qcl'] = array (
   'root' => '/var/www/qcl',
-  'uri' => 'http://$DOMAIN',
+  'uri' => 'https://$DOMAIN',
   'path-aliases' => array (
     '%profile' => 'profiles/qtr_client',
     '%downloads' => '/var/www/downloads',
@@ -28,7 +28,7 @@ cat <<EOF > /etc/drush/local_qcl.aliases.drushrc.php
 // \$aliases['qcl_dev'] = array (
 //   'parent' => '@qcl',
 //   'root' => '/var/www/qcl_dev',
-//   'uri' => 'http://dev.$DOMAIN',
+//   'uri' => 'https://dev.$DOMAIN',
 // );
 EOF
 

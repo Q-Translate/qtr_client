@@ -16,7 +16,7 @@ cmd_setup-oauth2-login() {
     local client_url=$(ds exec drush @qcl php-eval 'print $GLOBALS["base_url"]')
     local server_url=$(ds $qtr_server exec drush @qtr php-eval 'print $GLOBALS["base_url"]')
     local redirect_uri="$client_url/oauth2/authorized"
-    local client_key=$(mcookie)
+    local client_key='localclient'
     local client_secret=$(mcookie)
 
     # register an oauth2 client on qtr_server

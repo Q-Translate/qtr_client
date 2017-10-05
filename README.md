@@ -64,9 +64,9 @@ people. http://info.qtranslate.org
     ds inject set-domain.sh <new.domain>
     ds inject set-translation-lng.sh
 
-    ds inject dev/clone.sh proj proj_test
-    ds inject dev/clone_rm.sh proj_test
-    ds inject dev/clone.sh proj proj1
+    ds inject dev/clone.sh test
+    ds inject dev/clone-del.sh test
+    ds inject dev/clone.sh 01
 
     ds backup [proj1]
     ds restore <backup-file.tgz> [proj1]
