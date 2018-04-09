@@ -1,7 +1,5 @@
 #!/bin/bash -x
 
-#source /host/settings.sh
-
 # disable the site for maintenance
 drush --yes @local_qcl vset maintenance_mode 1
 drush --yes @local_qcl cache-clear all
@@ -13,10 +11,6 @@ tar --extract --gunzip --preserve-permissions --file=$file
 backup=${file%%.tgz}
 backup=$(basename $backup)
 cd $backup/
-
-# restore
-restore_data
-restore_config
 
 # restore qcl users
 drush @qcl sql-query --file=$(pwd)/qcl_users.sql
