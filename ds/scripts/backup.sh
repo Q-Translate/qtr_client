@@ -26,7 +26,7 @@ drush @qcl features-list --pipe --status=enabled \
       > $(pwd)/qcl_features.txt
 
 # backup drupal variables
-dir=/var/www/qcl/profiles/btr_client/modules/features
+dir=/var/www/qcl/profiles/qtr_client/modules/features
 $dir/save-private-vars.sh @qcl
 mv restore-private-vars.php restore-private-vars-qcl.php
 
