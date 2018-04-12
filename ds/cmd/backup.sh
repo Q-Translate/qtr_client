@@ -97,7 +97,7 @@ _make_data_backup() {
     ds exec drush --yes @local_qcl cache-clear all
 
     # create the backup dir
-    local backup="backup-full-$(date +%Y%m%d)"
+    local backup="backup-data-$(date +%Y%m%d)"
     rm -rf $backup
     rm -f $backup.tgz
     mkdir $backup
