@@ -29,6 +29,9 @@ $drush features-revert qcl_misc
 $drush pm-enable qcl_layout
 $drush features-revert qcl_layout
 
+$drush pm-enable bootstrap
+$drush pm-enable qtr_client
+
 $drush pm-enable qcl_content
 
 #$drush pm-enable qcl_captcha
