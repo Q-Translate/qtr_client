@@ -11,7 +11,7 @@ defaults[projects][subdir] = contrib
 ; Bootstrap Theme
 ;--------------------
 
-projects[bootstrap] = 3.19
+projects[bootstrap] = 3.20
 projects[jquery_update] = 3.0-alpha5
 projects[less] = 4.0
 
@@ -37,7 +37,7 @@ projects[qtrclient][download][branch] = 7.x-2.x
 ;--------------------
 
 ;;; Development
-projects[devel] = 1.5
+projects[devel] = 1.6
 ;projects[coder] = 1.2
 projects[diff] = 3.3
 
@@ -58,7 +58,7 @@ projects[views] = 3.20
 projects[homebox] = 2.0-rc1
 projects[boxes] = 1.2
 projects[edit_profile] = 1.0-beta2
-projects[wysiwyg] = 2.4
+projects[wysiwyg] = 2.5
 
 ;;; Security
 projects[captcha] = 1.5
