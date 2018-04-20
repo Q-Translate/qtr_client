@@ -15,3 +15,6 @@ done < qcl_features.txt
 
 # restore private variables
 drush @qcl php-script $(pwd)/restore-private-vars-qcl.php
+
+# custom restore script
+[[ -f /host/restore.sh ]] && source /host/restore.sh

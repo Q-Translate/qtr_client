@@ -17,3 +17,6 @@ drush @qcl features-list --pipe --status=enabled \
 dir=/var/www/qcl/profiles/qtr_client/modules/features
 $dir/save-private-vars.sh @qcl
 mv restore-private-vars.php restore-private-vars-qcl.php
+
+# custom backup script
+[[ -f /host/backup.sh ]] && source /host/backup.sh
