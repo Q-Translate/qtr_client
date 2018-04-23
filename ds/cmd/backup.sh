@@ -40,7 +40,7 @@ _make_app_backup() {
     ds exec drush @$app cache-clear all
 
     # dump the content of the databases
-    ds exec drush @$app sql-dump --ordered-dump \
+    ds exec drush @$app sql-dump \
            --result-file=/host/$backup/$app.sql
 
     # copy app files to the backup dir
@@ -68,7 +68,7 @@ _make_full_backup() {
     ds exec drush --yes @local_qcl cache-clear all
 
     # dump the content of the database
-    ds exec drush @qcl sql-dump --ordered-dump \
+    ds exec drush @qcl sql-dump \
        --result-file=/host/$backup/qcl.sql
 
     # copy app files to the backup dir
@@ -76,7 +76,7 @@ _make_full_backup() {
 
     # backup also the qcl_dev
     if [[ -d var-www/qcl_dev ]]; then
-        ds exec drush @qcl_dev sql-dump --ordered-dump \
+        ds exec drush @qcl_dev sql-dump \
            --result-file=/host/$backup/qcl_dev.sql
         cp -a var-www/qcl_dev $backup/
     fi
