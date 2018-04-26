@@ -41,7 +41,8 @@ _make_app_backup() {
 
     # dump the content of the databases
     ds exec drush @$app sql-dump \
-           --result-file=/host/$backup/$app.sql
+       --extra="--hex-blob --compress" \
+       --result-file=/host/$backup/$app.sql
 
     # copy app files to the backup dir
     cp -a var-www/$app $backup
@@ -69,6 +70,7 @@ _make_full_backup() {
 
     # dump the content of the database
     ds exec drush @qcl sql-dump \
+       --extra="--hex-blob --compress" \
        --result-file=/host/$backup/qcl.sql
 
     # copy app files to the backup dir
@@ -77,6 +79,7 @@ _make_full_backup() {
     # backup also the qcl_dev
     if [[ -d var-www/qcl_dev ]]; then
         ds exec drush @qcl_dev sql-dump \
+           --extra="--hex-blob --compress" \
            --result-file=/host/$backup/qcl_dev.sql
         cp -a var-www/qcl_dev $backup/
     fi
