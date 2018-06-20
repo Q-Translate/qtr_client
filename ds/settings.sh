@@ -2,7 +2,7 @@ APP=qtr_client/ds
 
 ### Docker settings.
 IMAGE=qtr_client
-CONTAINER=qcl-example-org
+CONTAINER=qcl.example.org
 DOMAIN="qcl.example.org"
 
 ### Uncomment if this installation is for development.

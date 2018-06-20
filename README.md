@@ -22,11 +22,11 @@ people. http://info.qtranslate.org
     git clone https://github.com/Q-Translate/qtr_client /opt/docker-scripts/qtr_client
     ```
 
-  - Create a directory for the container: `ds init qtr_client/ds @qcl-example-org`
+  - Create a directory for the container: `ds init qtr_client/ds @qcl.example.org`
 
   - Fix the settings:
     ```
-    cd /var/ds/qcl-example-org/
+    cd /var/ds/qcl.example.org/
     vim settings.sh
     ```
 
