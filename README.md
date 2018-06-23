@@ -48,6 +48,13 @@ people. http://info.qtranslate.org
     https://qcl.example.org
 
 
+## Backup and restore
+
+    ds backup data
+    ds backup
+    ds restore <backup-file.tgz>
+
+
 ## Other commands
 
     ds help
@@ -68,6 +75,3 @@ people. http://info.qtranslate.org
     ds inject dev/clone.sh test
     ds inject dev/clone-del.sh test
     ds inject dev/clone.sh 01
-
-    ds backup [proj1]
-    ds restore <backup-file.tgz> [proj1]
