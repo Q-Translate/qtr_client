@@ -51,7 +51,7 @@ people. http://info.qtranslate.org
 ## Backup and restore
 
     ds backup data
-    ds backup
+    ds backup full
     ds restore <backup-file.tgz>
 
 
