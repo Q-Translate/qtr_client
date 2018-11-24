@@ -1152,7 +1152,6 @@ User account administration page at [user:edit-url] for [site:name]';
     'menu_devel' => 0,
     'devel_execute_php' => 0,
     'menu_features' => 0,
-    'homebox_custom' => 0,
     'system_main-menu' => 0,
     'system_management' => 0,
     'system_navigation' => 0,

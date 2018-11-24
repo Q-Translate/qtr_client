@@ -43,7 +43,6 @@ $drush features-revert qcl_permissions
 #$drush pm-enable qcl_invite
 #$drush pm-enable qcl_simplenews
 #$drush pm-enable qcl_mass_contact
-#$drush pm-enable qcl_googleanalytics
 
 ### update to the latest version of core and modules
 #$drush pm-refresh
