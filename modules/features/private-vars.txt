@@ -1,3 +1,4 @@
+qtrClient_translation_lng
 disqus_domain
 disqus_userapikey
 disqus_publickey
