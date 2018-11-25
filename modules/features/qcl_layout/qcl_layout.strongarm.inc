@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * qcl_layout.strongarm.inc

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * qcl_layout.context.inc
@@ -124,43 +125,25 @@ function qcl_layout_context_default_contexts() {
           'module' => 'boxes',
           'delta' => 'headerbox',
           'region' => 'header',
-          'weight' => '-9',
+          'weight' => '-1',
         ),
         'system-main' => array(
           'module' => 'system',
           'delta' => 'main',
           'region' => 'content',
-          'weight' => '-10',
+          'weight' => '-1',
         ),
         'qtrClient-stats' => array(
           'module' => 'qtrClient',
           'delta' => 'stats',
           'region' => 'sidebar_first',
-          'weight' => '-8',
+          'weight' => '-1',
         ),
         'qtrClient-topusers' => array(
           'module' => 'qtrClient',
           'delta' => 'topusers',
           'region' => 'sidebar_first',
-          'weight' => '-7',
-        ),
-        'disqus-disqus_recent_comments' => array(
-          'module' => 'disqus',
-          'delta' => 'disqus_recent_comments',
-          'region' => 'sidebar_second',
-          'weight' => '-10',
-        ),
-        'disqus-disqus_popular_threads' => array(
-          'module' => 'disqus',
-          'delta' => 'disqus_popular_threads',
-          'region' => 'sidebar_second',
-          'weight' => '-9',
-        ),
-        'disqus-disqus_top_commenters' => array(
-          'module' => 'disqus',
-          'delta' => 'disqus_top_commenters',
-          'region' => 'sidebar_second',
-          'weight' => '-8',
+          'weight' => '-1',
         ),
       ),
     ),
