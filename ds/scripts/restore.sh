@@ -35,6 +35,12 @@ done < qcl_features.txt
 # restore private variables
 drush @qcl php-script $(pwd)/restore-private-vars-qcl.php
 
+# restore twitter configuration
+if [[ -f trc ]]; then
+    cp trc /home/twitter/.trc
+    chown twitter: /home/twitter/.trc
+fi
+
 # restore any custom scripts
 restore_custom_scripts
 

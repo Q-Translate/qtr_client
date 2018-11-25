@@ -18,6 +18,9 @@ dir=/var/www/qcl/profiles/qtr_client/modules/features
 $dir/save-private-vars.sh @qcl
 mv restore-private-vars.php restore-private-vars-qcl.php
 
+# backup twitter configuration
+[[ -f /home/twitter/.trc ]] && cp /home/twitter/.trc trc
+
 # backup settings.sh
 cp /host/settings.sh .
 
