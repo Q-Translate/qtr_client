@@ -32,6 +32,8 @@ people. http://info.qtranslate.org
 
   - Build image, create the container and configure it: `ds make`
 
+  - Customize the local command 'remake': `vim cmd/remake.sh`
+
 
 ## Access the website
 
